@@ -18,7 +18,7 @@ everything fits together, then open the folder you need.
 ```
 Selenium_Automation/
 │
-├── README.md                     <- you are here
+├── README.md                     
 │
 ├── Modules/                      <- weekly module workbooks
 │   ├── requirements.txt          <- shared Python dependencies for Modules 1-3
