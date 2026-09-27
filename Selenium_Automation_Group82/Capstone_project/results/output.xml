@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.13.11 on win32)" generated="2026-09-28T00:49:36.784783" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\sheef\project0\Capstone_project\tests">
+<suite id="s1-s1" name="01 Registration" source="C:\Users\sheef\project0\Capstone_project\tests\01_registration.robot">
+<kw name="Open Application" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:49:37.435533" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T00:49:37.435191" elapsed="4.556336"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T00:49:41.991933" elapsed="0.048553"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-09-28T00:49:42.040915" elapsed="0.000554"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:49:37.433728" elapsed="4.607920"/>
+</kw>
+<test id="s1-s1-t1" name="Create New Account" line="10">
+<kw name="Registration Already Done" owner="common">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2026-09-28T00:49:42.044811" level="INFO" html="true">File '&lt;a href="file://C:\Users\sheef\project0\Capstone_project\registration_done.flag"&gt;C:\Users\sheef\project0\Capstone_project\registration_done.flag&lt;/a&gt;' exists.</msg>
+<arg>${FLAG_FILE}</arg>
+<doc>Fails unless the given `path` points to an existing file.</doc>
+<status status="PASS" start="2026-09-28T00:49:42.044376" elapsed="0.000569"/>
+</kw>
+<msg time="2026-09-28T00:49:42.045169" level="INFO">${done} = True</msg>
+<var>${done}</var>
+<arg>File Should Exist</arg>
+<arg>${FLAG_FILE}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-28T00:49:42.043542" elapsed="0.001678"/>
+</kw>
+<return>
+<value>${done}</value>
+<status status="PASS" start="2026-09-28T00:49:42.045365" elapsed="0.000106"/>
+</return>
+<msg time="2026-09-28T00:49:42.045715" level="INFO">${done} = True</msg>
+<var>${done}</var>
+<status status="PASS" start="2026-09-28T00:49:42.042945" elapsed="0.002808"/>
+</kw>
+<kw name="Skip If" owner="BuiltIn">
+<msg time="2026-09-28T00:49:42.046721" level="SKIP">Already registered earlier - skipping.</msg>
+<arg>${done}</arg>
+<arg>Already registered earlier - skipping.</arg>
+<doc>Conditionally stops the current test or task and sets its status to SKIP.</doc>
+<status status="SKIP" start="2026-09-28T00:49:42.046184" elapsed="0.000745">Already registered earlier - skipping.</status>
+</kw>
+<kw name="Open Signup Page" owner="registration_page">
+<status status="NOT RUN" start="2026-09-28T00:49:42.047461" elapsed="0.000100"/>
+</kw>
+<kw name="Enter Signup Details" owner="registration_page">
+<status status="NOT RUN" start="2026-09-28T00:49:42.048012" elapsed="0.000075"/>
+</kw>
+<kw name="Fill Account Information" owner="registration_page">
+<status status="NOT RUN" start="2026-09-28T00:49:42.048493" elapsed="0.000062"/>
+</kw>
+<kw name="Create Account" owner="registration_page">
+<status status="NOT RUN" start="2026-09-28T00:49:42.048912" elapsed="0.000056"/>
+</kw>
+<kw name="Verify Account Created" owner="registration_page">
+<status status="NOT RUN" start="2026-09-28T00:49:42.050037" elapsed="0.000075"/>
+</kw>
+<kw name="Mark Registration Done" owner="common">
+<status status="NOT RUN" start="2026-09-28T00:49:42.050694" elapsed="0.000073"/>
+</kw>
+<kw name="Take Test Screenshot" owner="common" type="TEARDOWN">
+<if>
+<branch type="IF" condition="'${TEST STATUS}' != 'SKIP'">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>${SUITE NAME}_${TEST NAME}_${TEST STATUS}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-09-28T00:49:42.052829" elapsed="0.000050"/>
+</kw>
+<status status="NOT RUN" start="2026-09-28T00:49:42.052409" elapsed="0.000555"/>
+</branch>
+<status status="PASS" start="2026-09-28T00:49:42.052364" elapsed="0.000663"/>
+</if>
+<doc>Saves one screenshot per test, named after the test and its status.</doc>
+<status status="PASS" start="2026-09-28T00:49:42.051907" elapsed="0.001196"/>
+</kw>
+<doc>Runs only ONCE ever. Skipped once registration_done.flag exists.</doc>
+<status status="SKIP" start="2026-09-28T00:49:42.041831" elapsed="0.011696">Already registered earlier - skipping.</status>
+</test>
+<kw name="Close Application" owner="common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-28T00:49:42.055283" elapsed="2.340122"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:49:42.055003" elapsed="2.340736"/>
+</kw>
+<status status="SKIP" start="2026-09-28T00:49:36.864426" elapsed="7.531418"/>
+</suite>
+<suite id="s1-s2" name="02 Login" source="C:\Users\sheef\project0\Capstone_project\tests\02_login.robot">
+<kw name="Open Application" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:49:44.410101" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T00:49:44.409688" elapsed="11.230208"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T00:49:55.640189" elapsed="0.050964"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-09-28T00:49:55.691409" elapsed="0.001099"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:49:44.407977" elapsed="11.284716"/>
+</kw>
+<test id="s1-s2-t1" name="Login With Valid Credentials" line="10">
+<kw name="Open Login Page" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SIGNUP_LOGIN}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-28T00:49:55.694551" elapsed="0.035378"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:49:55.731064" level="INFO">Executing JavaScript:
+document.querySelector("a[href='/login']").click()
+Without any arguments.</msg>
+<arg>document.querySelector("a[href='/login']").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-28T00:49:55.730474" elapsed="4.900948"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-28T00:50:00.631760" elapsed="0.036726"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:49:55.693875" elapsed="4.974780"/>
+</kw>
+<kw name="Enter Login Details" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:00.669943" level="INFO">Typing text 'sheefa_hss_test_12345@gmail.com' into text field 'xpath=//input[@data-qa='login-email']'.</msg>
+<arg>${LOGIN_EMAIL}</arg>
+<arg>${USER_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:50:00.669615" elapsed="0.179561"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:00.849917" level="INFO">Typing text 'Password123' into text field 'xpath=//input[@data-qa='login-password']'.</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${USER_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:50:00.849470" elapsed="0.118893"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:00.669198" elapsed="0.299349"/>
+</kw>
+<kw name="Click Login" owner="login_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:00.969743" level="INFO">Clicking element 'xpath=//button[@data-qa='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:50:00.969432" elapsed="3.764575"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:00.969008" elapsed="3.765253"/>
+</kw>
+<kw name="Verify User Is Logged In" owner="login_page">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:04.753069" level="INFO">Current page contains text 'Logged in as'.</msg>
+<arg>Logged in as</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-28T00:50:04.735243" elapsed="0.017958"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:04.734814" elapsed="0.018587"/>
+</kw>
+<kw name="Take Test Screenshot" owner="common" type="TEARDOWN">
+<if>
+<branch type="IF" condition="'${TEST STATUS}' != 'SKIP'">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:05.056868" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/Tests.02%20Login_Login%20With%20Valid%20Credentials_PASS.png"&gt;&lt;img src="screenshots/Tests.02%20Login_Login%20With%20Valid%20Credentials_PASS.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SUITE NAME}_${TEST NAME}_${TEST STATUS}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-28T00:50:04.754880" elapsed="0.302191"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:04.754551" elapsed="0.302682"/>
+</branch>
+<status status="PASS" start="2026-09-28T00:50:04.754501" elapsed="0.302851"/>
+</if>
+<doc>Saves one screenshot per test, named after the test and its status.</doc>
+<status status="PASS" start="2026-09-28T00:50:04.754178" elapsed="0.303315"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:49:55.692859" elapsed="9.364946"/>
+</test>
+<kw name="Close Application" owner="common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-28T00:50:05.060118" elapsed="2.359610"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:05.059755" elapsed="2.360172"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:49:44.397431" elapsed="23.022569"/>
+</suite>
+<suite id="s1-s3" name="03 Products" source="C:\Users\sheef\project0\Capstone_project\tests\03_products.robot">
+<kw name="Open Application" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:07.451853" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T00:50:07.451540" elapsed="5.008729"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T00:50:12.460611" elapsed="0.038897"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-09-28T00:50:12.499858" elapsed="0.000453"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:07.451033" elapsed="5.049389"/>
+</kw>
+<test id="s1-s3-t1" name="Search For Product" line="10">
+<kw name="Open Products Page" owner="product_page">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:12.501894" level="INFO">Executing JavaScript:
+window.location.href='/products'
+Without any arguments.</msg>
+<arg>window.location.href='/products'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-28T00:50:12.501676" elapsed="2.940907"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_BOX}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-28T00:50:15.442933" elapsed="0.022053"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:12.501221" elapsed="2.963921"/>
+</kw>
+<kw name="Search Product" owner="product_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:15.467280" level="INFO">Typing text 'Blue Top' into text field 'id=search_product'.</msg>
+<arg>${SEARCH_BOX}</arg>
+<arg>${product}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:50:15.466727" elapsed="0.130321"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${SEARCH_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-28T00:50:15.597303" elapsed="0.316197"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:15.914058" level="INFO">Executing JavaScript:
+document.querySelector("#submit_search").click()
+Without any arguments.</msg>
+<arg>document.querySelector("#submit_search").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-28T00:50:15.913790" elapsed="2.676174"/>
+</kw>
+<arg>Blue Top</arg>
+<status status="PASS" start="2026-09-28T00:50:15.466294" elapsed="3.123892"/>
+</kw>
+<kw name="Verify Product Is Displayed" owner="product_page">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:18.613001" level="INFO">Current page contains text 'Blue Top'.</msg>
+<arg>${product}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-28T00:50:18.591249" elapsed="0.021915"/>
+</kw>
+<arg>Blue Top</arg>
+<status status="PASS" start="2026-09-28T00:50:18.590690" elapsed="0.022661"/>
+</kw>
+<kw name="Take Test Screenshot" owner="common" type="TEARDOWN">
+<if>
+<branch type="IF" condition="'${TEST STATUS}' != 'SKIP'">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:18.865012" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/Tests.03%20Products_Search%20For%20Product_PASS.png"&gt;&lt;img src="screenshots/Tests.03%20Products_Search%20For%20Product_PASS.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SUITE NAME}_${TEST NAME}_${TEST STATUS}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-28T00:50:18.615036" elapsed="0.250219"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:18.614627" elapsed="0.250779"/>
+</branch>
+<status status="PASS" start="2026-09-28T00:50:18.614587" elapsed="0.250927"/>
+</if>
+<doc>Saves one screenshot per test, named after the test and its status.</doc>
+<status status="PASS" start="2026-09-28T00:50:18.614080" elapsed="0.251586"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:12.500515" elapsed="6.365463"/>
+</test>
+<kw name="Close Application" owner="common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-28T00:50:18.867297" elapsed="2.310934"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:18.867004" elapsed="2.311523"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:07.421206" elapsed="13.757414"/>
+</suite>
+<suite id="s1-s4" name="04 Cart" source="C:\Users\sheef\project0\Capstone_project\tests\04_cart.robot">
+<kw name="Open Application" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:21.195070" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T00:50:21.194712" elapsed="2.688053"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T00:50:23.883292" elapsed="1.921318"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-09-28T00:50:25.805002" elapsed="0.000531"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:21.194007" elapsed="4.611713"/>
+</kw>
+<test id="s1-s4-t1" name="Add Product To Cart" line="11">
+<kw name="Open Products Page" owner="product_page">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:25.807371" level="INFO">Executing JavaScript:
+window.location.href='/products'
+Without any arguments.</msg>
+<arg>window.location.href='/products'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-28T00:50:25.807174" elapsed="3.032933"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_BOX}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-28T00:50:28.840511" elapsed="0.025582"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:25.806779" elapsed="3.059552"/>
+</kw>
+<kw name="Add First Product To Cart" owner="product_page">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-28T00:50:28.867685" elapsed="0.301291"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:29.169583" level="INFO">Executing JavaScript:
+document.querySelector("a[data-product-id='1']").click()
+Without any arguments.</msg>
+<arg>document.querySelector("a[data-product-id='1']").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-28T00:50:29.169317" elapsed="0.010101"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:50:31.180394" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:50:29.179659" elapsed="2.000949"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:28.866941" elapsed="2.313874"/>
+</kw>
+<kw name="Open Cart" owner="product_page">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:31.182237" level="INFO">Executing JavaScript:
+window.location.href='/view_cart'
+Without any arguments.</msg>
+<arg>window.location.href='/view_cart'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-28T00:50:31.182015" elapsed="3.125263"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Shopping Cart</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T00:50:34.307544" elapsed="0.016941"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:31.181454" elapsed="3.143200"/>
+</kw>
+<kw name="Verify Cart Is Displayed" owner="cart_page">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Shopping Cart</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T00:50:34.325665" elapsed="0.012254"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:34.325169" elapsed="0.012978"/>
+</kw>
+<kw name="Take Test Screenshot" owner="common" type="TEARDOWN">
+<if>
+<branch type="IF" condition="'${TEST STATUS}' != 'SKIP'">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:34.601554" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/Tests.04%20Cart_Add%20Product%20To%20Cart_PASS.png"&gt;&lt;img src="screenshots/Tests.04%20Cart_Add%20Product%20To%20Cart_PASS.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SUITE NAME}_${TEST NAME}_${TEST STATUS}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-28T00:50:34.339893" elapsed="0.261866"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:34.339403" elapsed="0.262493"/>
+</branch>
+<status status="PASS" start="2026-09-28T00:50:34.339359" elapsed="0.262628"/>
+</if>
+<doc>Saves one screenshot per test, named after the test and its status.</doc>
+<status status="PASS" start="2026-09-28T00:50:34.338829" elapsed="0.263280"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:25.805879" elapsed="8.796536"/>
+</test>
+<kw name="Close Application" owner="common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-28T00:50:34.604104" elapsed="2.408437"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:34.603713" elapsed="2.409103"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:21.179802" elapsed="15.833095"/>
+</suite>
+<suite id="s1-s5" name="05 Checkout" source="C:\Users\sheef\project0\Capstone_project\tests\05_checkout.robot">
+<kw name="Open Application" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:37.021957" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T00:50:37.021664" elapsed="5.446308"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T00:50:42.468545" elapsed="0.045812"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-09-28T00:50:42.514717" elapsed="0.000494"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:37.020840" elapsed="5.494524"/>
+</kw>
+<test id="s1-s5-t1" name="Proceed To Checkout" line="11">
+<kw name="Open Products Page" owner="product_page">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:42.516971" level="INFO">Executing JavaScript:
+window.location.href='/products'
+Without any arguments.</msg>
+<arg>window.location.href='/products'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-28T00:50:42.516763" elapsed="4.600425"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_BOX}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-28T00:50:47.117514" elapsed="0.023333"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:42.516370" elapsed="4.624672"/>
+</kw>
+<kw name="Add First Product To Cart" owner="product_page">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-28T00:50:47.142106" elapsed="0.297704"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:47.440450" level="INFO">Executing JavaScript:
+document.querySelector("a[data-product-id='1']").click()
+Without any arguments.</msg>
+<arg>document.querySelector("a[data-product-id='1']").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-28T00:50:47.440170" elapsed="0.011340"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:50:49.453054" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:50:47.452070" elapsed="2.001209"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:47.141661" elapsed="2.311810"/>
+</kw>
+<kw name="Open Cart" owner="product_page">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:49.455240" level="INFO">Executing JavaScript:
+window.location.href='/view_cart'
+Without any arguments.</msg>
+<arg>window.location.href='/view_cart'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-28T00:50:49.454937" elapsed="2.311646"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Shopping Cart</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T00:50:51.766867" elapsed="0.014665"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:49.454177" elapsed="2.327610"/>
+</kw>
+<kw name="Verify Cart Is Displayed" owner="cart_page">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Shopping Cart</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T00:50:51.782787" elapsed="0.008680"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:51.782338" elapsed="0.009286"/>
+</kw>
+<kw name="Proceed To Checkout" owner="cart_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-28T00:50:51.792528" elapsed="0.027714"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-28T00:50:51.820666" elapsed="0.299047"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:52.120364" level="INFO">Clicking element 'xpath=//a[contains(@class,'check_out')]'.</msg>
+<arg>${CHECKOUT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:50:52.120006" elapsed="0.072740"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Checkout</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T00:50:52.193092" elapsed="0.014720"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:51.792124" elapsed="0.415895"/>
+</kw>
+<kw name="Take Test Screenshot" owner="common" type="TEARDOWN">
+<if>
+<branch type="IF" condition="'${TEST STATUS}' != 'SKIP'">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:50:52.397705" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/Tests.05%20Checkout_Proceed%20To%20Checkout_PASS.png"&gt;&lt;img src="screenshots/Tests.05%20Checkout_Proceed%20To%20Checkout_PASS.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SUITE NAME}_${TEST NAME}_${TEST STATUS}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-28T00:50:52.209869" elapsed="0.188025"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:52.209335" elapsed="0.188669"/>
+</branch>
+<status status="PASS" start="2026-09-28T00:50:52.209286" elapsed="0.188803"/>
+</if>
+<doc>Saves one screenshot per test, named after the test and its status.</doc>
+<status status="PASS" start="2026-09-28T00:50:52.208872" elapsed="0.189318"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:42.515493" elapsed="9.883033"/>
+</test>
+<kw name="Close Application" owner="common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-28T00:50:52.399784" elapsed="2.423545"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:52.399512" elapsed="2.424066"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:50:37.014262" elapsed="17.809389"/>
+</suite>
+<status status="PASS" start="2026-09-28T00:49:36.787882" elapsed="78.037257"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="4" fail="0" skip="1">Tests</stat>
+<stat name="01 Registration" id="s1-s1" pass="0" fail="0" skip="1">Tests.01 Registration</stat>
+<stat name="02 Login" id="s1-s2" pass="1" fail="0" skip="0">Tests.02 Login</stat>
+<stat name="03 Products" id="s1-s3" pass="1" fail="0" skip="0">Tests.03 Products</stat>
+<stat name="04 Cart" id="s1-s4" pass="1" fail="0" skip="0">Tests.04 Cart</stat>
+<stat name="05 Checkout" id="s1-s5" pass="1" fail="0" skip="0">Tests.05 Checkout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
