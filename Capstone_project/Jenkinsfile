@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'pip install robotframework'
+                bat 'pip install robotframework-seleniumlibrary'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat 'robot --outputdir results tests'
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'results/*', allowEmptyArchive: true
+        }
+    }
+}
