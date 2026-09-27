@@ -1,5 +1,0 @@
-username,password,expected
-tomsmith,SuperSecretPassword!,success
-wronguser,SuperSecretPassword!,invalid
-tomsmith,wrongpassword,invalid
-wronguser,wrongpassword,invalid
