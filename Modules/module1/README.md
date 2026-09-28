@@ -6,7 +6,7 @@ This module covers foundational Selenium automation concepts, moving from basic 
 
 ## 📹 Video Demonstration
 ## 📹 Video Demonstration
-* **Watch the Module 1 Walkthrough:** [Click here to view the video demonstration](https://drive.google.com/file/d/1Hc-3GKYIXfSCKTEQqbL7NVYQbQJt2B/view?usp=drivesdk)
+* **Watch the Module 1 Walkthrough:** [Click here to view the video demonstration](https://drive.google.com/file/d/1Hc-3GKYIXKfSCKTEQqbLd7NVYQbQJt2B/view?usp=drivesdk)
 
 ---
 
