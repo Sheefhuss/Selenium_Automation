@@ -5,7 +5,7 @@ This module focuses on implementing Behavior-Driven Development (BDD) using the 
 ---
 
 ## 📹 Video Demonstration
-* **Watch the Module 3 Walkthrough:** [Click here to view the video demonstration](INSERT_VIDEO_LINK_HERE)
+* **Watch the Module 3 Walkthrough:** [Click here to view the video demonstration](https://drive.google.com/file/d/1WiptF2DALU4c3YVSAf-zMXh4zJPH6Fhp/view?usp=drivesdk)
 
 ---
 

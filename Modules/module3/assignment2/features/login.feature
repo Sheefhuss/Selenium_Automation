@@ -9,7 +9,7 @@ Feature: Login functionality
 
     Examples:
       | username  | password              | result  |
-      | tomsmith  | SuperSecretPassword!  | success |
+      | tomsmith  | SuperSecretPassword   | success |
       | wronguser | SuperSecretPassword!  | failure |
       | tomsmith  | wrongpassword         | failure |
       | wronguser | wrongpassword         | failure |

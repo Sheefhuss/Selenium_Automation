@@ -11,7 +11,7 @@ def open_login_page(context):
 
 @when('I enter username "tomsmith"')
 def enter_username(context):
-    context.driver.find_element(By.ID, "username").send_keys("tomsmith!")
+    context.driver.find_element(By.ID, "username").send_keys("tomsmith")
 
 
 @when('I enter password "SuperSecretPassword!"')
