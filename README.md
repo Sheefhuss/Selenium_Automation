@@ -22,7 +22,7 @@ Selenium_Automation/
 │
 ├── Modules/                      <- weekly module workbooks
 │   ├── requirements.txt          <- shared Python dependencies for Modules 1-3
-│   │
+│   ├── Lab_work_report.pdf       <- Laboratory workbook
 │   ├── module1/                  <- Core Fundamentals, Locators & Advanced Interactions
 │   │   ├── README.md
 │   │   ├── code_session/         <- assignment1.py .. assignment6.py
@@ -53,7 +53,7 @@ Selenium_Automation/
 │   ├── Jenkinsfile                <- CI pipeline definition
 │   ├── registration_done.flag     <- created after first successful registration
 │   └── results/                   <- log.html, report.html, output.xml, screenshots/
-│
+│   
 └── Certificates/                  <- course completion certificates (PDF)
     ├── Selenium Webdriver with Python.pdf
     ├── Python for Automation.pdf
