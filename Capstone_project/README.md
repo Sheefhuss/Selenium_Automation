@@ -8,7 +8,7 @@ Automated end-to-end UI tests for the e-commerce practice site
 
 ## Demonstration Video
 
-> **Demo link:** _paste your video link here_
+> **Demo link:** _paste_
 ---
 
 ## Table of Contents
